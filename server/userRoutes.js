@@ -39,6 +39,7 @@ router.post('/signup',async (req,res)=>{
                                 //send the token to the client
                                 res.cookie('token',token,{
                                     httpOnly:true,
+                                    path:'/',
                                 }).json({status:201,token:token,message:"user created successfully"});
                             }
                         })
@@ -74,7 +75,8 @@ router.post('/login',(req,res)=>{
                 
                     //sent the token to the client
                     res.cookie('token',token,{
-                        httpOnly:true
+                        httpOnly:true,
+                        path:'/'
                     }).json({status:201,token,message:'you are successfully logged in'});
                     // res
                     // .cookie("access_token", token, {

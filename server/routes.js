@@ -4,10 +4,9 @@ const dotenv=require('dotenv');
 dotenv.config();
 const jwt=require('jsonwebtoken');
 const db = require('./db');
-const cookieParser=require('cookie-parser');
 
 
-router.get('/record/view',cookieParser(),(req,res)=>{
+router.get('/record/view',(req,res)=>{
     //extract info from the token
     const token=req.cookies.token;
     console.log(req.cookies);
