@@ -7,9 +7,8 @@ const userRouter=require('./userRoutes');
 const cors=require('cors');
 
 const corsOptions ={
-    Origin:"*",
-    Headers:'*',
-    Credentials:true,
+    origin:'http://localhost:3000',
+    credentials:true,
 }
 app.use(cookieParser());
 app.use(cors(corsOptions));
